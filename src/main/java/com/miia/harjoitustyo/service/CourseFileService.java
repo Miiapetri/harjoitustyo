@@ -3,9 +3,10 @@ package com.miia.harjoitustyo.service;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.FileWriter;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -19,7 +20,14 @@ public class CourseFileService implements Serializable {
 
     public void writeCoursesToFile(List<Course> courses) throws IOException {
         try {
-        FileWriter fw = new FileWriter(new File("courses.txt"));
+            FileOutputStream f = new FileOutputStream(new File("C:\\Users\\Miia\\Documents\\things\\courses.txt"));
+            ObjectOutputStream o = new ObjectOutputStream(f);
+            //FileWriter fw = new FileWriter(new File("students.txt"));
+            for (Course course : courses) {
+                o.writeObject(course + System.lineSeparator());
+            }
+            o.close();
+            f.close();
         } catch(IOException e) {
             e.printStackTrace();
         }
@@ -28,7 +36,7 @@ public class CourseFileService implements Serializable {
         public List<Course> readCoursesFromFile() throws IOException {
             List<Course> courses = new ArrayList<>();
             try {
-                FileInputStream fi = new FileInputStream(new File("students.txt"));
+                FileInputStream fi = new FileInputStream(new File("C:\\Users\\Miia\\Documents\\things\\courses.txt"));
                 ObjectInputStream oi = new ObjectInputStream(fi);
     
                 courses.add((Course) oi.readObject());

@@ -5,6 +5,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.annotation.PostConstruct;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,9 +17,15 @@ public class CourseService {
 
     @Autowired
     CourseFileService myService;
+    
     private List<Course> courses = new ArrayList<>();
 
-    public CourseService() throws IOException {
+    public CourseService() {
+ 
+    }
+
+    @PostConstruct
+    public void init() throws IOException {
         try {
             courses = myService.readCoursesFromFile();
         } catch (FileNotFoundException e) {

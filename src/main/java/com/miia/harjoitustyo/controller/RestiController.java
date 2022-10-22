@@ -18,6 +18,7 @@ public class RestiController {
 
     @Autowired
     StudentService myService;
+    @Autowired
     CourseService myService2;
 
     @GetMapping("courses")
