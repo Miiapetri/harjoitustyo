@@ -5,8 +5,8 @@ public class Student {
     private String lname;
     private int age;
     private int grade;
-    private long StudentId;
-    private static long idCounter=0;
+    private int StudentId;
+    private static int idCounter=0;
 
 
     // konstruktorit
@@ -14,7 +14,7 @@ public class Student {
 
     }
 
-    public Student(String fname, String lname, int age, int grade){
+    public Student(String fname, String lname, int age, int grade, int StudentId){
         this.fname = fname;
         this.lname = lname;
         this.age = age;
@@ -30,7 +30,7 @@ public class Student {
     public String getLname() {
         return this.lname;
     }
-    public long getStudentId() {
+    public int getStudentId() {
         return this.StudentId;
     }
     public String getName() {

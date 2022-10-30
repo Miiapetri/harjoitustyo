@@ -1,11 +1,11 @@
 package com.miia.harjoitustyo.data;
 
 public class Course {
-    private long CourseId;
+    private int CourseId;
     private String Teacher;
     private String ClassId;
     private String CourseName;
-    private static long CourseIdCounter = 0;
+    private static int CourseIdCounter = 0;
 
 
     //konstruktorit
@@ -13,15 +13,15 @@ public class Course {
 
     }
     
-    public Course (String Teacher, String ClassId, String CourseName){
-        this.CourseId = CourseIdCounter++;
+    public Course (String Teacher, String ClassId, String CourseName, int CourseId){
         this.Teacher = Teacher;
         this.ClassId = ClassId;
         this.CourseName = CourseName;
+        this.CourseId = CourseIdCounter++;
     }
 
     // getterit ja setterit
-    public long getCourseId() {
+    public int getCourseId() {
     return this.CourseId;
     }
     public String getTeacher() {

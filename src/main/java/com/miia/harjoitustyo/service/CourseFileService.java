@@ -20,9 +20,8 @@ public class CourseFileService implements Serializable {
 
     public void writeCoursesToFile(List<Course> courses) throws IOException {
         try {
-            FileOutputStream f = new FileOutputStream(new File("C:\\Users\\Miia\\Documents\\things\\courses.txt"));
+            FileOutputStream f = new FileOutputStream("./src/documents/courses.txt");
             ObjectOutputStream o = new ObjectOutputStream(f);
-            //FileWriter fw = new FileWriter(new File("students.txt"));
             for (Course course : courses) {
                 o.writeObject(course + System.lineSeparator());
             }
@@ -36,7 +35,7 @@ public class CourseFileService implements Serializable {
         public List<Course> readCoursesFromFile() throws IOException {
             List<Course> courses = new ArrayList<>();
             try {
-                FileInputStream fi = new FileInputStream(new File("C:\\Users\\Miia\\Documents\\things\\courses.txt"));
+                FileInputStream fi = new FileInputStream("./src/documents/courses.txt");
                 ObjectInputStream oi = new ObjectInputStream(fi);
     
                 courses.add((Course) oi.readObject());

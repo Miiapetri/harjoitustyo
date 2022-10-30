@@ -1,11 +1,9 @@
 package com.miia.harjoitustyo.service;
 
-import java.io.*;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -21,9 +19,8 @@ public class StudentFileService {
     
     public void writeStudentsToFile(List<Student> students) throws IOException {
     try {
-    FileOutputStream f = new FileOutputStream(new File("C:\\Users\\Miia\\Documents\\things\\students.txt"));
+    FileOutputStream f = new FileOutputStream("./src/documents/students.txt");
     ObjectOutputStream o = new ObjectOutputStream(f);
-    // FileWriter fw = new FileWriter(new File("students.txt"));
     for (Student student : students) {
         o.writeObject(student + System.lineSeparator());
     }
@@ -38,7 +35,7 @@ public class StudentFileService {
     public List<Student> readStudentsFromFile() throws IOException {
         List<Student> students = new ArrayList<>();
         try {
-            FileInputStream fi = new FileInputStream(new File("C:\\Users\\Miia\\Documents\\things\\students.txt"));
+            FileInputStream fi = new FileInputStream("./src/documents/students.txt");
             ObjectInputStream oi = new ObjectInputStream(fi);
             
             students.add((Student) oi.readObject());
