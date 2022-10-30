@@ -37,7 +37,11 @@ public class CourseService {
         courses.add(course);
     }
 
+    // public List<Course> getCourse(){
+    // return new ArrayList<>(courses);
+    // }
+
     public List<Course> getCourse(){
-    return new ArrayList<>(courses);
+        return courses;
     }
 }

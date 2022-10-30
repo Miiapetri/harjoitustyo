@@ -22,9 +22,11 @@ public class CourseFileService implements Serializable {
         try {
             FileOutputStream f = new FileOutputStream("./src/documents/courses.txt");
             ObjectOutputStream o = new ObjectOutputStream(f);
-            for (Course course : courses) {
-                o.writeObject(course + System.lineSeparator());
-            }
+
+            o.writeObject(courses);
+            // for (Course course : courses) {
+            //     o.writeObject(course + System.lineSeparator());
+            // }
             o.close();
             f.close();
         } catch(IOException e) {
@@ -37,8 +39,11 @@ public class CourseFileService implements Serializable {
             try {
                 FileInputStream fi = new FileInputStream("./src/documents/courses.txt");
                 ObjectInputStream oi = new ObjectInputStream(fi);
+                List<Course> CourseFile = (List<Course>) oi.readObject();
     
-                courses.add((Course) oi.readObject());
+                // courses.add((Course) oi.readObject());
+                oi.close();
+                fi.close();
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
             } catch (IOException e) {
@@ -48,6 +53,6 @@ public class CourseFileService implements Serializable {
             }
     
     
-            return courses;
+            return CourseFile;
         }
 }

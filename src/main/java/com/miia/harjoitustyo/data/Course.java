@@ -1,8 +1,8 @@
 package com.miia.harjoitustyo.data;
 
 public class Course {
-    private int CourseId;
-    private String Teacher;
+    private int courseId;
+    private String teacher;
     private String ClassId;
     private String CourseName;
     private static int CourseIdCounter = 0;
@@ -10,22 +10,22 @@ public class Course {
 
     //konstruktorit
     public Course(){
-
+        
     }
     
-    public Course (String Teacher, String ClassId, String CourseName, int CourseId){
-        this.Teacher = Teacher;
+    public Course (String teacher, String ClassId, String CourseName, int courseId){
+        this.teacher = teacher;
         this.ClassId = ClassId;
         this.CourseName = CourseName;
-        this.CourseId = CourseIdCounter++;
+        this.courseId = CourseIdCounter++;
     }
 
     // getterit ja setterit
     public int getCourseId() {
-    return this.CourseId;
+    return this.courseId;
     }
     public String getTeacher() {
-    return this.Teacher;
+    return this.teacher;
     }
     public String getClassId() {
     return this.ClassId;
@@ -35,8 +35,8 @@ public class Course {
     }
 
 
-    public void setTeacher(String Teacher) {
-        this.Teacher = Teacher;
+    public void setTeacher(String teacher) {
+        this.teacher = teacher;
     }
     public void setClassId(String ClassId) {
         this.ClassId = ClassId;
