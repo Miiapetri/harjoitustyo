@@ -14,7 +14,7 @@ public class Student {
 
     }
 
-    public Student(String fname, String lname, int age, int grade, int StudentId){
+    public Student(String fname, String lname, int age, int grade){
         this.fname = fname;
         this.lname = lname;
         this.age = age;

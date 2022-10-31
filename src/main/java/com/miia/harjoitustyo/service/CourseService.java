@@ -26,22 +26,33 @@ public class CourseService {
 
     @PostConstruct
     public void init() throws IOException {
-        try {
-            courses = myService.readCoursesFromFile();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
+        // try {
+        //     courses = myService.readCoursesFromFile();
+        // } catch (FileNotFoundException e) {
+        //     e.printStackTrace();
+        // }
     }
 
-    public void addCourse(Course course){
+    public List<Course> getAllCourses() throws IOException, ClassNotFoundException {
+        courses.addAll(myService.getAllCourses());
+        return myService.getAllCourses();
+    }
+
+    public void addCourse(Course course) throws IOException{
+        myService.writeCourseToFile(course);
         courses.add(course);
     }
 
-    // public List<Course> getCourse(){
-    // return new ArrayList<>(courses);
-    // }
+    public List<Course> getCourses() throws ClassNotFoundException, IOException {
+        return myService.getAllCourses();
+    }
 
-    public List<Course> getCourse(){
-        return courses;
+    public List<Course> getCoursebyName(String CourseName){
+        List<Course> cName = new ArrayList<>();
+
+        for (Course course : cName) {
+            course.getCourseName().equals(cName);
+        }
+        return cName;
     }
 }

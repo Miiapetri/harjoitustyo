@@ -1,11 +1,14 @@
 package com.miia.harjoitustyo.data;
 
+import java.util.List;
+
 public class Course {
     private int courseId;
     private String teacher;
     private String ClassId;
     private String CourseName;
-    private static int CourseIdCounter = 0;
+    private static Integer CourseIdCounter = 0;
+    private List<Student> students;
 
 
     //konstruktorit

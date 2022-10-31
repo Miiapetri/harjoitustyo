@@ -25,19 +25,35 @@ public class StudentService {
      }
 
     @PostConstruct
-    public void init() throws IOException{
-    try {
-    students = myService.readStudentsFromFile();
-    } catch (FileNotFoundException e) {
-        e.printStackTrace();
+    public void init() throws IOException {
+    //students = myService.writeStudentsToFile(students);
     }
-    }
+     
+     public List<Student> getAllStudents() throws IOException, ClassNotFoundException {
+        students.addAll(myService.getAllStudents());
+        return myService.getAllStudents();
+     }
 
-    public void addStudent(Student student){
+
+
+    public void addStudent(Student student) throws IOException{
+        myService.writeStudentToFile(student);
         students.add(student);
     }
 
-    public List<Student> getStudents(){
-        return new ArrayList<>(students);
+    public List<Student> getStudents() throws ClassNotFoundException, IOException{
+
+        return myService.getAllStudents();
+        //return new ArrayList<>(students);
+    }
+
+    public List<Student> getStudentbyName(String fname) {
+        List<Student> names = new ArrayList<>();
+
+        for (Student student : names) {
+            student.getfname().equals(fname);
+        }
+
+        return names;
     }
 }
