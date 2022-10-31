@@ -1,6 +1,5 @@
 package com.miia.harjoitustyo.service;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -47,12 +46,15 @@ public class CourseService {
         return myService.getAllCourses();
     }
 
-    public List<Course> getCoursebyName(String CourseName){
-        List<Course> cName = new ArrayList<>();
-
+    public Course getCoursebyName(String CourseName){
+        List<Course> cName = myService.getAllCourses();
+        Course name = new Course();
         for (Course course : cName) {
-            course.getCourseName().equals(cName);
+            if(course.getCourseName().equals(CourseName)){
+                name = course;
+            }
+            
         }
-        return cName;
+        return name;
     }
 }

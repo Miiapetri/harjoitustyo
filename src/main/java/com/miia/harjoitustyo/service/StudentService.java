@@ -48,9 +48,9 @@ public class StudentService {
 
     public Student getStudentbyName(String fname) {
         List<Student> studentlist = myService.getAllStudents();
-        Student name = null;
+        Student name = new Student();
         for (Student student : studentlist) {
-            if(student.getfname() == fname){
+            if(student.getfname().equals(fname)){
                 name = student;
             }
             
