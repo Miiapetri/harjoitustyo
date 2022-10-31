@@ -23,6 +23,8 @@ public class RestiController {
     @Autowired
     CourseService myService2;
 
+
+    //get-käskyt käyttäjän päästä
     @GetMapping("courses")
     public List<Course> getCourses() throws ClassNotFoundException, IOException{
         return myService2.getAllCourses();
@@ -33,6 +35,12 @@ public class RestiController {
         return myService.getAllStudents();
     }
 
+    @GetMapping("studentbyname/{fname}")
+    public Student getStudentByName(@PathVariable String fname){
+        return myService.getStudentbyName(fname);
+    }
+
+    //post-käskyt käyttäjän päästä
     @PostMapping("addcourse")
         public String addCourse(@RequestBody Course course) throws IOException{
             myService2.addCourse(course);
@@ -46,11 +54,7 @@ public class RestiController {
             return "";
         }
 
-    @GetMapping("studentbyname/{fname}")
-        public Student getStudentByName(@PathVariable String fname){
-            return myService.getStudentbyName(fname);
-        }
-    
+
      
     
 }

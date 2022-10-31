@@ -11,7 +11,7 @@ public class Course {
     private List<Student> students;
 
 
-    //konstruktorit
+    // konstruktorit, joilla luodaan kurssi. courseid ei tällä hetkellä toimi
     public Course(){
         
     }

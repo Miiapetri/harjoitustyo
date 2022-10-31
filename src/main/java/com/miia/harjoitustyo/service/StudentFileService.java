@@ -17,6 +17,8 @@ import com.miia.harjoitustyo.data.Student;
 public class StudentFileService {
     Gson gson = new Gson();
 
+
+    // kirjoitetaan tiedostoon hyödyntäen gsonia
     public void writeStudentToFile(Student student) throws IOException {
         FileWriter f = new FileWriter(new File("students.txt"), true);
         f.write(gson.toJson(student)+ System.lineSeparator());
@@ -32,6 +34,8 @@ public class StudentFileService {
         return students;
     }
 
+
+    // saadaan tiedot tiedostosta gsonin avulla
     public List<Student> getAllStudents(){
         List<Student> students = new ArrayList<>();
 
@@ -46,41 +50,5 @@ public class StudentFileService {
             return students;
         }
     }
-//     public void writeStudentsToFile(String student) throws IOException {
-//     try {
-//     FileOutputStream f = new FileOutputStream("students.txt");
-//     ObjectOutputStream o = new ObjectOutputStream(f);
-//     //for (Student student : students) {
-//         o.writeObject(student + System.lineSeparator());
-//     //}
-//     o.close();
-//     f.close();
-    
-//     } catch(IOException e) {
-//         e.printStackTrace();
-//     }
-// }
 
-//     public List<Student> readStudentsFromFile() throws IOException {
-//         List<Student> students = new ArrayList<>();
-//         try {
-//             FileInputStream fi = new FileInputStream("students.txt");
-//             ObjectInputStream oi = new ObjectInputStream(fi);
-            
-//             students.add((Student) oi.readObject());
-
-//             oi.close();
-//             fi.close();
-
-//         } catch (FileNotFoundException e) {
-//             e.printStackTrace();
-//         } catch (IOException e) {
-//             e.printStackTrace();
-//         } catch (ClassNotFoundException e) {
-//             e.printStackTrace();
-//         }
-
-
-//         return students;
-//     }
 }

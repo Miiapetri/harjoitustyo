@@ -25,27 +25,27 @@ public class CourseService {
 
     @PostConstruct
     public void init() throws IOException {
-        // try {
-        //     courses = myService.readCoursesFromFile();
-        // } catch (FileNotFoundException e) {
-        //     e.printStackTrace();
-        // }
+        
     }
 
+    //luetaan kaikki kurssit, jotka on luotu, tiedostosta
     public List<Course> getAllCourses() throws IOException, ClassNotFoundException {
         courses.addAll(myService.getAllCourses());
         return myService.getAllCourses();
     }
 
+    //lisätään kursseja tiedostoon
     public void addCourse(Course course) throws IOException{
         myService.writeCourseToFile(course);
         courses.add(course);
     }
 
+    // luetaan kursseja
     public List<Course> getCourses() throws ClassNotFoundException, IOException {
         return myService.getAllCourses();
     }
 
+    // saadaan tulostettua kurssit kurssin nimen perusteella
     public Course getCoursebyName(String CourseName){
         List<Course> cName = myService.getAllCourses();
         Course name = new Course();

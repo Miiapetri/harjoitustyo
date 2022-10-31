@@ -9,7 +9,7 @@ public class Student {
     private static int idCounter=0;
 
 
-    // konstruktorit
+    // konstruktorit, joissa luodaan student oliot. studentid ei täälläkään toimi
     public Student(){
 
     }

@@ -18,6 +18,8 @@ import com.miia.harjoitustyo.data.Course;
 public class CourseFileService implements Serializable {
     Gson gson = new Gson();
 
+
+    // tiedostoon kirjoittaminen hyödyntäen gsonia
     public void writeCourseToFile(Course course) throws IOException {
         FileWriter f = new FileWriter(new File("courses.txt"), true);
         f.write(gson.toJson(course)+ System.lineSeparator());
@@ -33,7 +35,7 @@ public class CourseFileService implements Serializable {
         return courses;
     }
 
-    
+    // tiedostosta lukeminen gsonin avulla
     public List<Course> getAllCourses(){
         List<Course> courses = new ArrayList<>();
 
@@ -49,26 +51,4 @@ public class CourseFileService implements Serializable {
         }
     }
 
-
-        // public List<Course> readCoursesFromFile() throws IOException {
-        //     List<Course> courses = new ArrayList<>();
-        //     try {
-        //         FileInputStream fi = new FileInputStream("./documents/courses.txt");
-        //         ObjectInputStream oi = new ObjectInputStream(fi);
-        //         courses = (List<Course>) oi.readObject();
-    
-        //         courses.add((Course) oi.readObject());
-        //         oi.close();
-        //         fi.close();
-        //     } catch (FileNotFoundException e) {
-        //         e.printStackTrace();
-        //     } catch (IOException e) {
-        //         e.printStackTrace();
-        //     } catch (ClassNotFoundException e) {
-        //         e.printStackTrace();
-        //     }
-    
-    
-        //     return null;
-        // }
 }
