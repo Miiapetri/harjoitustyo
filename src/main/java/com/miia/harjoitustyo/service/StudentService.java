@@ -1,6 +1,5 @@
 package com.miia.harjoitustyo.service;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -38,7 +37,7 @@ public class StudentService {
 
     public void addStudent(Student student) throws IOException{
         myService.writeStudentToFile(student);
-        students.add(student);
+        //students.add(student);
     }
 
     public List<Student> getStudents() throws ClassNotFoundException, IOException{
@@ -47,13 +46,16 @@ public class StudentService {
         //return new ArrayList<>(students);
     }
 
-    public List<Student> getStudentbyName(String fname) {
-        List<Student> names = new ArrayList<>();
-
-        for (Student student : names) {
-            student.getfname().equals(fname);
+    public Student getStudentbyName(String fname) {
+        List<Student> studentlist = myService.getAllStudents();
+        Student name = null;
+        for (Student student : studentlist) {
+            if(student.getfname() == fname){
+                name = student;
+            }
+            
         }
 
-        return names;
+        return name;
     }
 }

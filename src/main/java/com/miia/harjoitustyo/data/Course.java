@@ -7,7 +7,7 @@ public class Course {
     private String teacher;
     private String ClassId;
     private String CourseName;
-    private static Integer CourseIdCounter = 0;
+    private static int CourseIdCounter = 0;
     private List<Student> students;
 
 
@@ -16,11 +16,12 @@ public class Course {
         
     }
     
-    public Course (String teacher, String ClassId, String CourseName, int courseId){
+    public Course (String teacher, String ClassId, String CourseName){
         this.teacher = teacher;
         this.ClassId = ClassId;
         this.CourseName = CourseName;
         this.courseId = CourseIdCounter++;
+        
     }
 
     // getterit ja setterit

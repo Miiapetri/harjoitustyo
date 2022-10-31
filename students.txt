@@ -1,4 +1,3 @@
-{"fname":"Teppo","lname":"Mattila","age":31,"grade":3,"StudentId":0}
-{"fname":"Matti","lname":"Mattila","age":34,"grade":5,"StudentId":0}
-{"fname":"Matti","lname":"Mattila","age":34,"grade":5,"StudentId":0}
-{"fname":"Matti","lname":"Mattila","age":34,"grade":5,"StudentId":0}
+{"fname":"Katti","lname":"Matti","age":34,"grade":5,"StudentId":0}
+{"fname":"Matti","lname":"Matti","age":34,"grade":5,"StudentId":0}
+{"fname":"matti","lname":"teppo","age":34,"grade":5,"StudentId":0}

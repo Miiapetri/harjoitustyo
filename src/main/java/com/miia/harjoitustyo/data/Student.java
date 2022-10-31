@@ -19,13 +19,14 @@ public class Student {
         this.lname = lname;
         this.age = age;
         this.grade = grade;
-        this.StudentId = idCounter++;
+        this.StudentId = Student.idCounter;
+        Student.idCounter++;
 
     }
 
     // getterit ja setterit 
     public String getfname() {
-    return this.fname;
+        return this.fname;
     }
     public String getLname() {
         return this.lname;
@@ -54,6 +55,10 @@ public class Student {
     }
     public void setgrade(int grade) {
         this.grade = grade;
+    }
+
+    public void setStudentId(int StudentId) {
+        this.StudentId = StudentId;
     }
     
 }

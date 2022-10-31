@@ -46,8 +46,8 @@ public class RestiController {
             return "";
         }
 
-    @GetMapping("studentbyname")
-        public List<Student> getStudentByName(@PathVariable String fname){
+    @GetMapping("studentbyname/{fname}")
+        public Student getStudentByName(@PathVariable String fname){
             return myService.getStudentbyName(fname);
         }
     
